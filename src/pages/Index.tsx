@@ -11,7 +11,7 @@ const Index = () => {
       <HeroSection 
         title="Foundations of African Civilization" 
         subtitle="Exploring the rich history, diverse cultures, and profound impact of African civilizations on the world"
-        backgroundImage="https://images.unsplash.com/photo-1489391013510-49401c8a3b74?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        backgroundImage="https://images.unsplash.com/photo-1516496636080-14fb876e029d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
       
       <section className="section-container">

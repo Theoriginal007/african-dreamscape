@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import HeroSection from '../components/HeroSection';
 import VideoPlayer from '../components/VideoPlayer';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, BookOpen, GraduationCap, Globe, MapPin } from 'lucide-react';
+import { ChevronLeft, BookOpen, GraduationCap, Globe, MapPin, Coffee, Heart, Lightbulb } from 'lucide-react';
 
 const CourseDetails = () => {
   const [activeSection, setActiveSection] = useState('hegel');
@@ -47,7 +47,7 @@ const CourseDetails = () => {
       <HeroSection 
         title="Foundations of African Civilization" 
         subtitle="Detailed exploration of key course topics that shaped my understanding of African history"
-        backgroundImage="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        backgroundImage="https://images.unsplash.com/photo-1489391013510-49401c8a3b74?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
       />
       
       <div className="section-container">
@@ -129,8 +129,8 @@ const CourseDetails = () => {
                   
                   <div className="mb-8 overflow-hidden rounded-lg">
                     <img 
-                      src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
-                      alt="Historical document representing philosophical views"
+                      src="https://images.unsplash.com/photo-1493962853295-0fd70327578a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                      alt="Traditional African landscape with mountains that Hegel never properly understood"
                       className="w-full h-64 object-cover object-center"
                     />
                   </div>
@@ -177,8 +177,8 @@ const CourseDetails = () => {
                   
                   <div className="mb-8 overflow-hidden rounded-lg">
                     <img 
-                      src="https://images.unsplash.com/photo-1516496636080-14fb876e029d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
-                      alt="Landscape representing the Songhai Empire region"
+                      src="https://images.unsplash.com/photo-1469041797191-50ace28483c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                      alt="Camels crossing the desert - reminiscent of the trans-Saharan trade routes that fueled the Songhai Empire"
                       className="w-full h-64 object-cover object-center"
                     />
                   </div>
@@ -247,8 +247,8 @@ const CourseDetails = () => {
                   
                   <div className="mb-8 overflow-hidden rounded-lg">
                     <img 
-                      src="https://images.unsplash.com/photo-1633425951599-c1fa7a614c0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
-                      alt="Historical colonial structures"
+                      src="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
+                      alt="African wildlife in the savanna - representing the rich natural resources that attracted colonial powers"
                       className="w-full h-64 object-cover object-center"
                     />
                   </div>
@@ -317,16 +317,51 @@ const CourseDetails = () => {
                     Studying the Foundations of African Civilization profoundly changed my understanding of world history. What resonated most with me was discovering the depth and sophistication of African civilizations that have been systematically overlooked in traditional education.
                   </p>
                   
+                  <div className="bg-africa-sand/10 p-6 rounded-lg my-6 border-l-4 border-africa-gold">
+                    <h3 className="text-xl font-semibold text-africa-earth mb-3 flex items-center">
+                      <Coffee className="mr-2 h-5 w-5" /> 
+                      My "Wait, What?!" Moments
+                    </h3>
+                    
+                    <p className="text-africa-coffee/90 mb-4">When I tell people I've taken a course on African Civilization, they usually assume I'm talking about mud huts and tribal dances. The look on their faces when I mention the University of Sankore's 700,000 manuscripts is PRICELESS! 😂</p>
+                    
+                    <p className="text-africa-coffee/90 mb-4">I still laugh thinking about how Hegel, considered one of history's great philosophical minds, confidently wrote Africa off as having "no historical part of the World"... meanwhile, Mansa Musa was casually being the richest person in human history. Talk about missing the memo! 🤦‍♀️</p>
+                    
+                    <p className="text-africa-coffee/90">And let's be honest - European colonizers drawing random lines across a continent they barely understood is basically the geopolitical equivalent of a toddler scribbling on a map. "This part's mine!" "No, I want that bit!" History's most consequential tantrum. 😅</p>
+                  </div>
+                  
                   <p className="text-africa-coffee/90 leading-relaxed mb-4">
                     Learning about the Songhai Empire's remarkable achievements—its universities, libraries, and complex governance structures—challenged everything I had previously understood about pre-colonial Africa. The juxtaposition of these realities against Hegel's dismissive views highlighted how history has been filtered through Eurocentric lenses.
                   </p>
+                  
+                  <div className="flex flex-col md:flex-row gap-6 my-6 bg-africa-sand/10 p-4 rounded-lg">
+                    <div className="md:w-1/2">
+                      <h3 className="text-xl font-semibold text-africa-earth mb-2 flex items-center">
+                        <Heart className="mr-2 h-5 w-5" />
+                        Why You Should Care
+                      </h3>
+                      <p className="text-africa-coffee/90 text-sm leading-relaxed">
+                        For my fellow Gen Z friends: Understanding African history isn't just about dusty old facts—it's about questioning the narratives we've been fed. And let's be real, if we can spend hours analyzing Marvel timelines, we can definitely appreciate the epic saga of actual empires and kingdoms! #RealWorldBuilding
+                      </p>
+                    </div>
+                    
+                    <div className="md:w-1/2">
+                      <h3 className="text-xl font-semibold text-africa-earth mb-2 flex items-center">
+                        <Lightbulb className="mr-2 h-5 w-5" />
+                        Mind = Blown Fact
+                      </h3>
+                      <p className="text-africa-coffee/90 text-sm leading-relaxed">
+                        While Europeans were still figuring out basic sanitation during the Middle Ages, Timbuktu had street lighting, public libraries, and universities with international students. Yeah, that Timbuktu—the same place sometimes used as slang for "middle of nowhere." The irony is too much! 🔥
+                      </p>
+                    </div>
+                  </div>
                   
                   <p className="text-africa-coffee/90 leading-relaxed mb-4">
                     The course's examination of colonization's profound impacts gave me a deeper understanding of contemporary global inequalities and the resilience of African societies. It connected historical events to present realities in ways that felt immediately relevant and important.
                   </p>
                   
                   <p className="text-africa-coffee/90 leading-relaxed">
-                    As someone studying computer science, this course broadened my perspective beyond technical fields. It reminded me that technological advancement must be paired with cultural understanding and historical awareness—a lesson I'll carry into my career as I work to create technology that respects and serves diverse communities.
+                    As someone studying computer science, this course broadened my perspective beyond technical fields. It reminded me that technological advancement must be paired with cultural understanding and historical awareness—a lesson I'll carry into my career as I work to create technology that respects and serves diverse communities. And who knows? Maybe my future tech company will help preserve and digitize those 700,000 manuscripts from Timbuktu that still need protection!
                   </p>
                 </div>
                 
