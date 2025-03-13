@@ -47,7 +47,7 @@ const CourseDetails = () => {
       <HeroSection 
         title="Foundations of African Civilization" 
         subtitle="Detailed exploration of key course topics that shaped my understanding of African history"
-        backgroundImage="https://images.unsplash.com/photo-1489391013510-49401c8a3b74?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        backgroundImage="public/lovable-uploads/50d1a3f1-993d-4bd8-95ef-7f2fd6dc7ce8.png"
       />
       
       <div className="section-container">
@@ -129,8 +129,8 @@ const CourseDetails = () => {
                   
                   <div className="mb-8 overflow-hidden rounded-lg">
                     <img 
-                      src="https://images.unsplash.com/photo-1493962853295-0fd70327578a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
-                      alt="Traditional African landscape with mountains that Hegel never properly understood"
+                      src="public/lovable-uploads/d3fe8e15-3f71-462c-b3a7-35e16cbb4517.png" 
+                      alt="Traditional African warriors and cultural representation that Hegel failed to understand or appreciate"
                       className="w-full h-64 object-cover object-center"
                     />
                   </div>
@@ -177,8 +177,8 @@ const CourseDetails = () => {
                   
                   <div className="mb-8 overflow-hidden rounded-lg">
                     <img 
-                      src="https://images.unsplash.com/photo-1469041797191-50ace28483c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
-                      alt="Camels crossing the desert - reminiscent of the trans-Saharan trade routes that fueled the Songhai Empire"
+                      src="public/lovable-uploads/e97f9e53-936d-4697-ad99-bdec49856f9e.png" 
+                      alt="Traditional African nobleman on horseback, reflecting the prestige and power of Songhai royalty"
                       className="w-full h-64 object-cover object-center"
                     />
                   </div>
@@ -247,8 +247,8 @@ const CourseDetails = () => {
                   
                   <div className="mb-8 overflow-hidden rounded-lg">
                     <img 
-                      src="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
-                      alt="African wildlife in the savanna - representing the rich natural resources that attracted colonial powers"
+                      src="public/lovable-uploads/5f5d5e2e-0cd6-496d-a760-4a2669b1c009.png" 
+                      alt="Traditional African marketplace showing the vibrant economic activity that was later disrupted by colonization"
                       className="w-full h-64 object-cover object-center"
                     />
                   </div>

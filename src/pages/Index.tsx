@@ -11,7 +11,7 @@ const Index = () => {
       <HeroSection 
         title="Foundations of African Civilization" 
         subtitle="Exploring the rich history, diverse cultures, and profound impact of African civilizations on the world"
-        backgroundImage="https://images.unsplash.com/photo-1516496636080-14fb876e029d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+        backgroundImage="public/lovable-uploads/d3fe8e15-3f71-462c-b3a7-35e16cbb4517.png"
       />
       
       <section className="section-container">
@@ -63,7 +63,7 @@ const Index = () => {
           <CourseSection 
             title="Hegel and Africa" 
             description="Examining Hegel's controversial perspectives on Africa and its place in world history, and how modern scholarship has challenged these views."
-            image="https://images.unsplash.com/photo-1535139262971-c51845709a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+            image="public/lovable-uploads/e45baccd-93e3-4f8e-8503-4f6c854e98bf.png"
             linkTo="/course-details"
             delay={100}
           />
@@ -71,7 +71,7 @@ const Index = () => {
           <CourseSection 
             title="The Songhai Empire" 
             description="Exploring one of Africa's largest and most powerful pre-colonial states that dominated West Africa in the 15th and 16th centuries."
-            image="https://images.unsplash.com/photo-1516496636080-14fb876e029d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+            image="public/lovable-uploads/e97f9e53-936d-4697-ad99-bdec49856f9e.png"
             linkTo="/course-details"
             delay={200}
           />
@@ -79,7 +79,7 @@ const Index = () => {
           <CourseSection 
             title="European Colonization" 
             description="Analyzing the profound impact of European colonization on African societies, economies, and cultures, and the legacy that continues today."
-            image="https://images.unsplash.com/photo-1633425951599-c1fa7a614c0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+            image="public/lovable-uploads/d5b3431d-6596-4a05-8763-6f6dbd2cab5a.png"
             linkTo="/course-details"
             delay={300}
           />
