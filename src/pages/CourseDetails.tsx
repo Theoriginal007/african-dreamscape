@@ -1,4 +1,3 @@
-
 import { useEffect, useRef, useState } from 'react';
 import HeroSection from '../components/HeroSection';
 import VideoPlayer from '../components/VideoPlayer';
@@ -47,7 +46,7 @@ const CourseDetails = () => {
       <HeroSection 
         title="Foundations of African Civilization" 
         subtitle="Detailed exploration of key course topics that shaped my understanding of African history"
-        backgroundImage="public/lovable-uploads/50d1a3f1-993d-4bd8-95ef-7f2fd6dc7ce8.png"
+        backgroundImage="/lovable-uploads/50d1a3f1-993d-4bd8-95ef-7f2fd6dc7ce8.png"
       />
       
       <div className="section-container">
@@ -57,7 +56,6 @@ const CourseDetails = () => {
         </Link>
         
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Sidebar Navigation */}
           <aside className="lg:w-1/4 lg:sticky lg:top-24 lg:self-start">
             <div className="africa-card">
               <h3 className="text-xl font-bold text-africa-earth mb-4 flex items-center">
@@ -113,10 +111,8 @@ const CourseDetails = () => {
             </div>
           </aside>
           
-          {/* Main Content */}
           <main className="lg:w-3/4">
             <div className="space-y-16">
-              {/* Hegel Section */}
               <section id="hegel" ref={hegelRef} className="scroll-mt-24">
                 <div className="africa-card">
                   <div className="flex items-center mb-4">
@@ -129,7 +125,7 @@ const CourseDetails = () => {
                   
                   <div className="mb-8 overflow-hidden rounded-lg">
                     <img 
-                      src="public/lovable-uploads/d3fe8e15-3f71-462c-b3a7-35e16cbb4517.png" 
+                      src="/lovable-uploads/e45baccd-93e3-4f8e-8503-4f6c854e98bf.png" 
                       alt="Traditional African warriors and cultural representation that Hegel failed to understand or appreciate"
                       className="w-full h-64 object-cover object-center"
                     />
@@ -159,12 +155,11 @@ const CourseDetails = () => {
                   
                   <div className="mt-8">
                     <h3 className="text-xl font-bold text-africa-earth mb-4">Scholarly Refutation</h3>
-                    <VideoPlayer videoId="YWmGzq9uFAs" title="Unthinking Eurocentrism and Africa's History" />
+                    <VideoPlayer videoId="dNeSOyZjWF0" title="Unthinking Eurocentrism and Africa's History" />
                   </div>
                 </div>
               </section>
               
-              {/* Songhai Section */}
               <section id="songhai" ref={songhaiRef} className="scroll-mt-24">
                 <div className="africa-card">
                   <div className="flex items-center mb-4">
@@ -177,7 +172,7 @@ const CourseDetails = () => {
                   
                   <div className="mb-8 overflow-hidden rounded-lg">
                     <img 
-                      src="public/lovable-uploads/e97f9e53-936d-4697-ad99-bdec49856f9e.png" 
+                      src="/lovable-uploads/e97f9e53-936d-4697-ad99-bdec49856f9e.png" 
                       alt="Traditional African nobleman on horseback, reflecting the prestige and power of Songhai royalty"
                       className="w-full h-64 object-cover object-center"
                     />
@@ -229,12 +224,11 @@ const CourseDetails = () => {
                   
                   <div className="mt-8">
                     <h3 className="text-xl font-bold text-africa-earth mb-4">The Songhai Empire: Historical Overview</h3>
-                    <VideoPlayer videoId="TmCnIFH6fiE" title="The Songhai Empire" />
+                    <VideoPlayer videoId="GfUT6LhBBYs" title="The Songhai Empire" />
                   </div>
                 </div>
               </section>
               
-              {/* Colonization Section */}
               <section id="colonization" ref={colonizationRef} className="scroll-mt-24">
                 <div className="africa-card">
                   <div className="flex items-center mb-4">
@@ -247,7 +241,7 @@ const CourseDetails = () => {
                   
                   <div className="mb-8 overflow-hidden rounded-lg">
                     <img 
-                      src="public/lovable-uploads/5f5d5e2e-0cd6-496d-a760-4a2669b1c009.png" 
+                      src="/lovable-uploads/d5b3431d-6596-4a05-8763-6f6dbd2cab5a.png" 
                       alt="Traditional African marketplace showing the vibrant economic activity that was later disrupted by colonization"
                       className="w-full h-64 object-cover object-center"
                     />
@@ -303,12 +297,11 @@ const CourseDetails = () => {
                   
                   <div className="mt-8">
                     <h3 className="text-xl font-bold text-africa-earth mb-4">The Scramble for Africa</h3>
-                    <VideoPlayer videoId="RD3CSu8wJxw" title="The Scramble for Africa" />
+                    <VideoPlayer videoId="CgzSnZidGuU" title="The Scramble for Africa" />
                   </div>
                 </div>
               </section>
               
-              {/* What Appealed to Me */}
               <section className="africa-card">
                 <h2 className="text-3xl font-bold text-africa-earth mb-6">What Appealed to Me Most</h2>
                 

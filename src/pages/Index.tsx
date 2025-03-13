@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
 import CourseSection from '../components/CourseSection';
@@ -11,7 +10,7 @@ const Index = () => {
       <HeroSection 
         title="Foundations of African Civilization" 
         subtitle="Exploring the rich history, diverse cultures, and profound impact of African civilizations on the world"
-        backgroundImage="public/lovable-uploads/d3fe8e15-3f71-462c-b3a7-35e16cbb4517.png"
+        backgroundImage="/lovable-uploads/d3fe8e15-3f71-462c-b3a7-35e16cbb4517.png"
       />
       
       <section className="section-container">
@@ -63,7 +62,7 @@ const Index = () => {
           <CourseSection 
             title="Hegel and Africa" 
             description="Examining Hegel's controversial perspectives on Africa and its place in world history, and how modern scholarship has challenged these views."
-            image="public/lovable-uploads/e45baccd-93e3-4f8e-8503-4f6c854e98bf.png"
+            image="/lovable-uploads/e45baccd-93e3-4f8e-8503-4f6c854e98bf.png"
             linkTo="/course-details"
             delay={100}
           />
@@ -71,7 +70,7 @@ const Index = () => {
           <CourseSection 
             title="The Songhai Empire" 
             description="Exploring one of Africa's largest and most powerful pre-colonial states that dominated West Africa in the 15th and 16th centuries."
-            image="public/lovable-uploads/e97f9e53-936d-4697-ad99-bdec49856f9e.png"
+            image="/lovable-uploads/e97f9e53-936d-4697-ad99-bdec49856f9e.png"
             linkTo="/course-details"
             delay={200}
           />
@@ -79,7 +78,7 @@ const Index = () => {
           <CourseSection 
             title="European Colonization" 
             description="Analyzing the profound impact of European colonization on African societies, economies, and cultures, and the legacy that continues today."
-            image="public/lovable-uploads/d5b3431d-6596-4a05-8763-6f6dbd2cab5a.png"
+            image="/lovable-uploads/d5b3431d-6596-4a05-8763-6f6dbd2cab5a.png"
             linkTo="/course-details"
             delay={300}
           />
