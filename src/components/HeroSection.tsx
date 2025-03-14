@@ -36,30 +36,47 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     });
   };
 
-  // Improved image preloading
+  // Enhanced image preloading with multiple fallbacks
   useEffect(() => {
-    // Set a quick timeout to show content even if image is still loading
-    const timeoutId = setTimeout(() => {
+    // Always show content after a short timeout to prevent blank screens
+    const immediateTimeoutId = setTimeout(() => {
       setImageLoaded(true);
-    }, 1000); // Fallback timeout of 1 second
+    }, 300); // Quick display for better UX
     
+    // Longer fallback in case of slow connections
+    const fallbackTimeoutId = setTimeout(() => {
+      setImageLoaded(true);
+    }, 1500);
+    
+    // Normal image loading
     const img = new Image();
     img.onload = () => {
       setImageLoaded(true);
-      clearTimeout(timeoutId);
+      clearTimeout(immediateTimeoutId);
+      clearTimeout(fallbackTimeoutId);
     };
     
-    // Start loading the image
+    // Handle errors by showing content anyway
+    img.onerror = () => {
+      console.log('Image failed to load:', backgroundImage);
+      setImageLoaded(true);
+      clearTimeout(immediateTimeoutId);
+      clearTimeout(fallbackTimeoutId);
+    };
+    
+    // Prioritize loading
     img.src = backgroundImage;
     
-    // Force immediate loading for better performance with local uploads
-    if (backgroundImage.includes('/lovable-uploads/')) {
+    // Force immediate loading for better performance with local uploads or cached images
+    if (backgroundImage.includes('/lovable-uploads/') || img.complete) {
       setImageLoaded(true);
-      clearTimeout(timeoutId);
+      clearTimeout(immediateTimeoutId);
+      clearTimeout(fallbackTimeoutId);
     }
     
     return () => {
-      clearTimeout(timeoutId);
+      clearTimeout(immediateTimeoutId);
+      clearTimeout(fallbackTimeoutId);
     };
   }, [backgroundImage]);
 

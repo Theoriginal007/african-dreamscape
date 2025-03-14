@@ -44,11 +44,45 @@ const CourseSection: React.FC<CourseSectionProps> = ({
     };
   }, [delay]);
 
-  // Preload the image
+  // Enhanced image preloading with fallbacks
   useEffect(() => {
+    // Always show something after a short timeout
+    const immediateTimeoutId = setTimeout(() => {
+      setImageLoaded(true);
+    }, 300);
+    
+    // Longer fallback
+    const fallbackTimeoutId = setTimeout(() => {
+      setImageLoaded(true);
+    }, 1500);
+    
     const img = new Image();
+    img.onload = () => {
+      setImageLoaded(true);
+      clearTimeout(immediateTimeoutId);
+      clearTimeout(fallbackTimeoutId);
+    };
+    
+    img.onerror = () => {
+      console.log('Image failed to load:', image);
+      setImageLoaded(true);
+      clearTimeout(immediateTimeoutId);
+      clearTimeout(fallbackTimeoutId);
+    };
+    
     img.src = image;
-    img.onload = () => setImageLoaded(true);
+    
+    // Handle cached images
+    if (img.complete || image.includes('/lovable-uploads/')) {
+      setImageLoaded(true);
+      clearTimeout(immediateTimeoutId);
+      clearTimeout(fallbackTimeoutId);
+    }
+    
+    return () => {
+      clearTimeout(immediateTimeoutId);
+      clearTimeout(fallbackTimeoutId);
+    };
   }, [image]);
 
   return (
@@ -62,7 +96,7 @@ const CourseSection: React.FC<CourseSectionProps> = ({
         <div className="overflow-hidden rounded-lg shadow-lg relative">
           {/* Blurred placeholder while loading */}
           <div 
-            className={`aspect-video w-full bg-africa-sand/20 ${imageLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}
+            className={`aspect-video w-full bg-africa-sand/20 ${imageLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500 absolute inset-0`}
             style={{ 
               backgroundImage: `url(${image})`,
               backgroundSize: 'cover',
