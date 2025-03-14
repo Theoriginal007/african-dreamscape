@@ -36,16 +36,31 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     });
   };
 
-  // Preload the image with priority
+  // Improved image preloading
   useEffect(() => {
-    const img = new Image();
-    img.src = backgroundImage;
-    img.onload = () => setImageLoaded(true);
-    
-    // Force immediate loading for better performance
-    if (backgroundImage.startsWith('/lovable-uploads/')) {
+    // Set a quick timeout to show content even if image is still loading
+    const timeoutId = setTimeout(() => {
       setImageLoaded(true);
+    }, 1000); // Fallback timeout of 1 second
+    
+    const img = new Image();
+    img.onload = () => {
+      setImageLoaded(true);
+      clearTimeout(timeoutId);
+    };
+    
+    // Start loading the image
+    img.src = backgroundImage;
+    
+    // Force immediate loading for better performance with local uploads
+    if (backgroundImage.includes('/lovable-uploads/')) {
+      setImageLoaded(true);
+      clearTimeout(timeoutId);
     }
+    
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [backgroundImage]);
 
   return (
