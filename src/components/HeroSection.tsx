@@ -36,18 +36,23 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     });
   };
 
-  // Preload the image
+  // Preload the image with priority
   useEffect(() => {
     const img = new Image();
     img.src = backgroundImage;
     img.onload = () => setImageLoaded(true);
+    
+    // Force immediate loading for better performance
+    if (backgroundImage.startsWith('/lovable-uploads/')) {
+      setImageLoaded(true);
+    }
   }, [backgroundImage]);
 
   return (
     <div ref={sectionRef} className="relative w-full h-screen overflow-hidden">
       {/* Blurred placeholder while loading */}
       <div 
-        className={`absolute inset-0 bg-africa-sand/30 ${imageLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-1000`}
+        className={`absolute inset-0 bg-africa-sand/30 ${imageLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}
         style={{ 
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -57,7 +62,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
       {/* Background image with parallax effect */}
       <div 
-        className={`absolute inset-0 transition-opacity duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+        className={`absolute inset-0 transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(${backgroundImage})`,
           backgroundSize: 'cover',

@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 import HeroSection from '../components/HeroSection';
 import { Link } from 'react-router-dom';
@@ -79,14 +78,14 @@ const PersonalJourney = () => {
                       <CheckCircle2 className="h-4 w-4 text-africa-gold mt-0.5 mr-2 flex-shrink-0" />
                       <div>
                         <p className="font-medium text-africa-coffee">Bachelor of Science in Computer Science</p>
-                        <p className="text-africa-coffee/70 text-sm">Expected Graduation: 2023</p>
+                        <p className="text-africa-coffee/70 text-sm">Expected Graduation: 2025</p>
                       </div>
                     </div>
                     <div className="flex items-start">
                       <CheckCircle2 className="h-4 w-4 text-africa-gold mt-0.5 mr-2 flex-shrink-0" />
                       <div>
                         <p className="font-medium text-africa-coffee">Foundations of African Civilization</p>
-                        <p className="text-africa-coffee/70 text-sm">Elective Course, 2022</p>
+                        <p className="text-africa-coffee/70 text-sm">Elective Course, 2025</p>
                       </div>
                     </div>
                   </div>

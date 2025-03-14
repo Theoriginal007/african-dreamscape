@@ -1,3 +1,4 @@
+
 import { Link } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
 import CourseSection from '../components/CourseSection';
@@ -8,8 +9,8 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <HeroSection 
-        title="Foundations of African Civilization" 
-        subtitle="Exploring the rich history, diverse cultures, and profound impact of African civilizations on the world"
+        title="Welcome to My Academic Journey" 
+        subtitle="Join me, Laura Gachanja, as I share my experiences studying the Foundations of African Civilization and my path as a computer science student approaching graduation."
         backgroundImage="/lovable-uploads/d3fe8e15-3f71-462c-b3a7-35e16cbb4517.png"
       />
       
@@ -18,9 +19,9 @@ const Index = () => {
           <span className="inline-block px-3 py-1 rounded-full bg-africa-sand/30 text-africa-coffee text-sm font-medium mb-4">
             E-Profile
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-africa-earth mb-4">Welcome to My Academic Journey</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-africa-earth mb-4">Foundations of African Civilization</h2>
           <p className="text-africa-coffee/90 leading-relaxed">
-            Join me, Laura Gachanja, as I share my experiences studying the Foundations of African Civilization and my path as a computer science student approaching graduation.
+            Exploring the rich history, diverse cultures, and profound impact of African civilizations on the world
           </p>
         </div>
         
@@ -95,13 +96,13 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="africa-card appear-from-bottom" style={{ animationDelay: '100ms' }}>
               <h3 className="text-xl font-bold text-africa-earth mb-4">The Songhai Empire</h3>
-              <VideoPlayer videoId="TmCnIFH6fiE" title="The Songhai Empire" />
+              <VideoPlayer videoId="8RhXSk0avhE" title="The Songhai Empire" />
               <p className="mt-4 text-africa-coffee/80">Learn about the rise and fall of the Songhai Empire, one of Africa's largest pre-colonial states.</p>
             </div>
             
             <div className="africa-card appear-from-bottom" style={{ animationDelay: '200ms' }}>
               <h3 className="text-xl font-bold text-africa-earth mb-4">The Scramble for Africa</h3>
-              <VideoPlayer videoId="RD3CSu8wJxw" title="The Scramble for Africa" />
+              <VideoPlayer videoId="5uMF9j8FTtI" title="The Scramble for Africa" />
               <p className="mt-4 text-africa-coffee/80">Understand how European powers partitioned and colonized the African continent.</p>
             </div>
           </div>
