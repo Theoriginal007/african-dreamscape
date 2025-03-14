@@ -14,6 +14,9 @@ Welcome to Laura Gachanja's personal academic website! This project showcases La
   - [Video Changes](#video-changes)
 - [Technical Details](#technical-details)
 - [Getting Help](#getting-help)
+- [Deployment Instructions](#deployment-instructions)
+- [Troubleshooting Common Issues](#troubleshooting-common-issues)
+- [Credits and Attribution](#credits-and-attribution)
 
 ## Introduction
 
@@ -177,27 +180,27 @@ If you need assistance making changes to this website, consider:
 
 1. **Finding a developer**: A web developer familiar with React and TypeScript can help make more complex changes.
 2. **Learning basics**: For minor text or image changes, basic HTML knowledge might be sufficient.
-3. **Using AI tools**: Tools like Lovable.dev can help you make changes through a chat interface without coding.
+3. **Using online tutorials**: Many free resources are available for learning web development basics.
 4. **Documentation**: React and Tailwind CSS have extensive documentation that can help with understanding the code.
 
 ## Deployment Instructions
 
 To deploy this website:
 
-1. **Using Lovable**:
-   - Open your project in Lovable.dev
-   - Click on "Share" in the top navigation
-   - Select "Publish" to deploy your site
-   - Your site will be live at the URL provided
+1. **Using standard hosting**:
+   - Build the project with `npm run build`
+   - Upload the files from the `dist` folder to your web hosting provider
+   - Configure your domain settings as needed
 
 2. **Using your own domain**:
-   - After publishing with Lovable, go to Project Settings
-   - Navigate to the Domains section
-   - Follow the instructions to connect your custom domain
+   - After deploying your site, go to your domain registrar
+   - Point your domain to your hosting provider's nameservers
+   - Configure any necessary DNS records
 
 3. **Using GitHub Pages or other services**:
    - Build the project with `npm run build`
    - Deploy the generated files in the `dist` folder to your hosting service
+   - Follow the specific instructions for your chosen hosting platform
 
 Remember: Before making any changes, always back up the original files to ensure you can revert if needed!
 
@@ -226,4 +229,3 @@ If the layout looks incorrect:
 - Website design and implementation: [Your Name/Company]
 - Images: [Attribution for any stock photos or images]
 - Content: Laura Gachanja
-- Built with Lovable AI
