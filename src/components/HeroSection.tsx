@@ -36,65 +36,62 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     });
   };
 
-  // Enhanced image preloading with multiple fallbacks
+  // Optimized image preloading with priority loading
   useEffect(() => {
-    // Always show content after a short timeout to prevent blank screens
-    const immediateTimeoutId = setTimeout(() => {
+    // Show placeholder immediately for better perceived performance
+    setTimeout(() => {
       setImageLoaded(true);
-    }, 300); // Quick display for better UX
+    }, 100);
     
-    // Longer fallback in case of slow connections
-    const fallbackTimeoutId = setTimeout(() => {
-      setImageLoaded(true);
-    }, 1500);
-    
-    // Normal image loading
+    // Preload image with low quality placeholder and higher priority
     const img = new Image();
+    
+    // Priority loading
+    img.loading = 'eager';
+    img.fetchPriority = 'high';
+    
     img.onload = () => {
       setImageLoaded(true);
-      clearTimeout(immediateTimeoutId);
-      clearTimeout(fallbackTimeoutId);
     };
     
-    // Handle errors by showing content anyway
     img.onerror = () => {
       console.log('Image failed to load:', backgroundImage);
       setImageLoaded(true);
-      clearTimeout(immediateTimeoutId);
-      clearTimeout(fallbackTimeoutId);
     };
     
-    // Prioritize loading
-    img.src = backgroundImage;
-    
-    // Force immediate loading for better performance with local uploads or cached images
-    if (backgroundImage.includes('/lovable-uploads/') || img.complete) {
-      setImageLoaded(true);
-      clearTimeout(immediateTimeoutId);
-      clearTimeout(fallbackTimeoutId);
+    // Add size hints for the browser
+    const imgUrl = new URL(backgroundImage, window.location.origin);
+    if (!imgUrl.searchParams.has('w')) {
+      imgUrl.searchParams.set('w', '1600');
+    }
+    if (!imgUrl.searchParams.has('q')) {
+      imgUrl.searchParams.set('q', '80');
     }
     
-    return () => {
-      clearTimeout(immediateTimeoutId);
-      clearTimeout(fallbackTimeoutId);
-    };
+    img.src = imgUrl.toString();
+    
+    // Force immediate loading for local uploads or cached images
+    if (backgroundImage.includes('/lovable-uploads/') || img.complete) {
+      setImageLoaded(true);
+    }
+    
   }, [backgroundImage]);
 
   return (
     <div ref={sectionRef} className="relative w-full h-screen overflow-hidden">
       {/* Blurred placeholder while loading */}
       <div 
-        className={`absolute inset-0 bg-africa-sand/30 ${imageLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}
+        className={`absolute inset-0 bg-africa-sand/30 ${imageLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
         style={{ 
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          filter: 'blur(20px)'
+          filter: 'blur(8px)'
         }}
       ></div>
 
-      {/* Background image with parallax effect */}
+      {/* Background image with optimized loading */}
       <div 
-        className={`absolute inset-0 transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+        className={`absolute inset-0 transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(${backgroundImage})`,
           backgroundSize: 'cover',

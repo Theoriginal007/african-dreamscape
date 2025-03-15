@@ -44,45 +44,67 @@ const CourseSection: React.FC<CourseSectionProps> = ({
     };
   }, [delay]);
 
-  // Enhanced image preloading with fallbacks
+  // Optimized image loading
   useEffect(() => {
-    // Always show something after a short timeout
-    const immediateTimeoutId = setTimeout(() => {
+    // Fast initial render with placeholder
+    setTimeout(() => {
       setImageLoaded(true);
-    }, 300);
+    }, 100);
     
-    // Longer fallback
-    const fallbackTimeoutId = setTimeout(() => {
-      setImageLoaded(true);
-    }, 1500);
-    
-    const img = new Image();
-    img.onload = () => {
-      setImageLoaded(true);
-      clearTimeout(immediateTimeoutId);
-      clearTimeout(fallbackTimeoutId);
+    // Use Intersection Observer to load images only when needed
+    const loadImage = () => {
+      const img = new Image();
+      
+      // Add loading optimization attributes
+      img.loading = 'lazy';
+      
+      img.onload = () => {
+        setImageLoaded(true);
+      };
+      
+      img.onerror = () => {
+        console.log('Image failed to load:', image);
+        setImageLoaded(true);
+      };
+      
+      // Optimize image URL with sizing parameters if applicable
+      const imgUrl = new URL(image, window.location.origin);
+      if (!imgUrl.searchParams.has('w') && !image.includes('/lovable-uploads/')) {
+        imgUrl.searchParams.set('w', '800');
+        imgUrl.searchParams.set('q', '80');
+      }
+      
+      img.src = imgUrl.toString();
+      
+      // For cached images, set as loaded immediately
+      if (img.complete || image.includes('/lovable-uploads/')) {
+        setImageLoaded(true);
+      }
     };
     
-    img.onerror = () => {
-      console.log('Image failed to load:', image);
-      setImageLoaded(true);
-      clearTimeout(immediateTimeoutId);
-      clearTimeout(fallbackTimeoutId);
-    };
-    
-    img.src = image;
-    
-    // Handle cached images
-    if (img.complete || image.includes('/lovable-uploads/')) {
-      setImageLoaded(true);
-      clearTimeout(immediateTimeoutId);
-      clearTimeout(fallbackTimeoutId);
+    // Create an observer for the image loading
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            loadImage();
+            if (sectionRef.current) observer.unobserve(sectionRef.current);
+          }
+        },
+        { rootMargin: '200px' } // Start loading before the image is in view
+      );
+      
+      if (sectionRef.current) {
+        observer.observe(sectionRef.current);
+      }
+      
+      return () => {
+        if (sectionRef.current) observer.unobserve(sectionRef.current);
+      };
+    } else {
+      // Fallback for browsers without Intersection Observer
+      loadImage();
     }
-    
-    return () => {
-      clearTimeout(immediateTimeoutId);
-      clearTimeout(fallbackTimeoutId);
-    };
   }, [image]);
 
   return (
@@ -94,22 +116,25 @@ const CourseSection: React.FC<CourseSectionProps> = ({
     >
       <div className="md:w-1/2 group">
         <div className="overflow-hidden rounded-lg shadow-lg relative">
-          {/* Blurred placeholder while loading */}
+          {/* Optimized low-quality placeholder */}
           <div 
-            className={`aspect-video w-full bg-africa-sand/20 ${imageLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500 absolute inset-0`}
+            className={`aspect-video w-full bg-africa-sand/20 ${imageLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300 absolute inset-0`}
             style={{ 
               backgroundImage: `url(${image})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
-              filter: 'blur(10px)'
+              filter: 'blur(8px)',
+              transform: 'scale(1.05)'
             }}
           ></div>
 
-          {/* Actual image */}
+          {/* Main image with optimized loading */}
           <img 
             src={image} 
             alt={title}
-            className={`aspect-video w-full object-cover transition-all duration-700 ${
+            loading="lazy"
+            decoding="async"
+            className={`aspect-video w-full object-cover transition-all duration-500 ${
               imageLoaded ? 'opacity-100' : 'opacity-0'
             } ${isVisible ? 'scale-100' : 'scale-105'} group-hover:scale-105`}
           />
