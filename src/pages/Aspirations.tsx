@@ -1,6 +1,7 @@
-
-import { Link } from 'react-router-dom';
+import React from 'react';
 import HeroSection from '../components/HeroSection';
+import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 import { Rocket, Users, Code, Building, Award, Globe } from 'lucide-react';
 
 const Aspirations = () => {
@@ -222,6 +223,8 @@ const Aspirations = () => {
           </section>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };

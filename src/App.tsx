@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import CourseDetails from "./pages/CourseDetails";
 import PersonalJourney from "./pages/PersonalJourney";
 import Aspirations from "./pages/Aspirations";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import AnimatedTransition from "./components/AnimatedTransition";
 import Navbar from "./components/Navbar";
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/course-details" element={<CourseDetails />} />
             <Route path="/personal-journey" element={<PersonalJourney />} />
             <Route path="/aspirations" element={<Aspirations />} />
+            <Route path="/contact" element={<Contact />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

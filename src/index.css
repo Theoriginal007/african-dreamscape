@@ -1,212 +1,53 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Spectral:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  :root {
-    --background: 30 25% 98%;
-    --foreground: 20 10% 10%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 20 10% 10%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 10% 10%;
-
-    --primary: 25 50% 50%;
-    --primary-foreground: 30 25% 98%;
-
-    --secondary: 30 30% 96%;
-    --secondary-foreground: 25 50% 30%;
-
-    --muted: 30 10% 96%;
-    --muted-foreground: 30 10% 40%;
-
-    --accent: 40 80% 60%;
-    --accent-foreground: 20 10% 10%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 20 10% 90%;
-    --input: 20 10% 90%;
-    --ring: 24 5.7% 82.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 20 10% 8%;
-    --foreground: 30 25% 95%;
-
-    --card: 20 10% 10%;
-    --card-foreground: 30 25% 95%;
-
-    --popover: 20 10% 8%;
-    --popover-foreground: 30 25% 95%;
-
-    --primary: 25 50% 50%;
-    --primary-foreground: 30 25% 98%;
-
-    --secondary: 30 10% 15%;
-    --secondary-foreground: 30 30% 90%;
-
-    --muted: 30 10% 15%;
-    --muted-foreground: 30 10% 70%;
-
-    --accent: 40 80% 50%;
-    --accent-foreground: 20 10% 10%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 20 10% 20%;
-    --input: 20 10% 20%;
-    --ring: 35.5 91.7% 32.9%;
-
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
+:root {
+  --africa-earth: #8B4513;
+  --africa-sand: #E2C9A7;
+  --africa-coffee: #4A3728;
+  --africa-sunset: #F08A4B;
+  --africa-forest: #2D5931;
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
   body {
-    @apply bg-background text-foreground font-sans;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading tracking-tight;
-  }
-
-  h1 {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold;
-  }
-
-  h2 {
-    @apply text-3xl md:text-4xl font-bold;
-  }
-
-  h3 {
-    @apply text-2xl md:text-3xl font-semibold;
-  }
-
-  h4 {
-    @apply text-xl md:text-2xl font-semibold;
-  }
-
-  p {
-    @apply leading-relaxed;
-  }
-
-  /* Custom text selection */
-  ::selection {
-    @apply bg-africa-gold/30 text-foreground;
+    @apply text-gray-900 bg-white;
+    font-family: 'Inter', sans-serif;
   }
 }
 
 @layer components {
-  .africa-link {
-    @apply relative inline-block text-africa-coffee after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-africa-gold after:transition-transform after:duration-300 hover:text-africa-gold hover:after:origin-bottom-left hover:after:scale-x-100;
-  }
-
-  .africa-card {
-    @apply relative overflow-hidden rounded-lg border border-border bg-card p-6 shadow-sm transition-all duration-300 hover:shadow-md;
-  }
-
-  .btn-primary {
-    @apply inline-flex h-10 items-center justify-center rounded-md bg-africa-terracotta px-4 py-2 text-sm font-medium text-white shadow transition-colors hover:bg-africa-terracotta/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-africa-gold disabled:pointer-events-none disabled:opacity-50;
-  }
-
-  .btn-secondary {
-    @apply inline-flex h-10 items-center justify-center rounded-md border border-africa-sand bg-transparent px-4 py-2 text-sm font-medium text-africa-coffee shadow-sm transition-colors hover:bg-africa-sand/20 hover:text-africa-earth focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-africa-gold disabled:pointer-events-none disabled:opacity-50;
-  }
-
   .section-container {
-    @apply mx-auto w-full max-w-7xl px-4 py-12 md:px-6 md:py-16 lg:py-20;
+    @apply container mx-auto px-4 py-12 md:py-16;
   }
-
-  .image-container {
-    @apply relative overflow-hidden rounded-lg shadow-md;
+  
+  .africa-card {
+    @apply bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow border border-africa-sand/10;
   }
-
-  .image-overlay {
-    @apply absolute inset-0 bg-africa-earth/10 backdrop-blur-[2px] opacity-0 transition-opacity duration-300 group-hover:opacity-100;
+  
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md bg-africa-earth px-6 py-3 text-white font-medium hover:bg-africa-earth/90 transition-colors;
   }
-
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 10px;
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-md border border-africa-earth px-6 py-3 text-africa-earth font-medium hover:bg-africa-sand/20 transition-colors;
   }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-secondary/50;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-africa-coffee/40 rounded-full transition-colors hover:bg-africa-coffee/60;
-  }
-
-  /* Page transitions */
-  .page-transition-enter {
-    @apply opacity-0;
-  }
-
-  .page-transition-enter-active {
-    @apply opacity-100 transition-opacity duration-300;
-  }
-
-  .page-transition-exit {
-    @apply opacity-100;
-  }
-
-  .page-transition-exit-active {
-    @apply opacity-0 transition-opacity duration-300;
-  }
-
+  
   .appear-from-bottom {
-    animation: appear-from-bottom 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    @apply opacity-0 translate-y-8;
+    animation: appear-from-bottom 0.6s ease forwards;
+  }
+}
+
+@keyframes appear-from-bottom {
+  from {
     opacity: 0;
+    transform: translateY(20px);
   }
-
-  @keyframes appear-from-bottom {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Safari video element appearance */
-  video {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

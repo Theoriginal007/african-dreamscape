@@ -1,5 +1,6 @@
-import { useEffect, useRef } from 'react';
+import React from 'react';
 import HeroSection from '../components/HeroSection';
+import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, Code, BookOpen, Globe, Server, CheckCircle2 } from 'lucide-react';
 
@@ -271,6 +272,8 @@ const PersonalJourney = () => {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };

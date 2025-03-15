@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
 import CourseSection from '../components/CourseSection';
 import VideoPlayer from '../components/VideoPlayer';
+import Footer from '../components/Footer';
 import { BookOpen, User, Rocket } from 'lucide-react';
 
 const Index = () => {
@@ -126,6 +127,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };

@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import React from 'react';
 import HeroSection from '../components/HeroSection';
+import Footer from '../components/Footer';
 import VideoPlayer from '../components/VideoPlayer';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, BookOpen, GraduationCap, Globe, MapPin, Coffee, Heart, Lightbulb } from 'lucide-react';
@@ -368,6 +369,8 @@ const CourseDetails = () => {
           </main>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };
