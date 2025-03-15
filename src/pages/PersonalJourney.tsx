@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useRef, useEffect } from 'react';
 import HeroSection from '../components/HeroSection';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';

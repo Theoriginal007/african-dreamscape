@@ -1,4 +1,5 @@
-import React from 'react';
+
+import React, { useState, useRef, useEffect } from 'react';
 import HeroSection from '../components/HeroSection';
 import Footer from '../components/Footer';
 import VideoPlayer from '../components/VideoPlayer';
